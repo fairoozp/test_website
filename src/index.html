@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Webcam Access in HTML5</title>
-    </head>
-    <h1 style="text-align: center";>
-        Webcam
-    </h1>
-    <body>
-            <button type="button" style="background-color:white;margin-left:auto;margin-right:auto;display:block;margin-top:22%;margin-bottom:0%">
+
+<head>
+    <title>Webcam Access in HTML5</title>
+</head>
+<h1 style="text-align: center" ;>
+    Webcam
+</h1>
+
+<body>
+    <button type="button" style="background-color:white;margin-left:auto;margin-right:auto;display:block;margin-top:22%;margin-bottom:0%">
                 <a href="https://www.google.com">
                     <img src="google.gif" alt="Save icon"width="220.25" height="100"/>    
                 </a>
-             </button>
-        <center>
-            <video id="vidDisplay" autoplay="true">
+    </button></br>
+    </br>
+    <a href="test.html"><p style="text-align:center">Test</p></a>
+    <center>
+        <video id="vidDisplay" autoplay="true">
                 No video support in your browser...
             </video>
-        </center>
-        <script type="text/javascript">
-            navigator.getUserMedia = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUsermedia || navigator.oGetUserMedia;
+    </center>
+    <script type="text/javascript">
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUsermedia || navigator.oGetUserMedia;
 
-            if(navigator.getUserMedia){
-                navigator.getUserMedia({video: true}, handleVideo, videoError);
-            }
-            function handleVideo(stream){
-                document.querySelector('#vidDisplay').src = window.URL.createObjectURL(stream);
-            }
-            function videoError(e){
-                alert("There are some problem...");
-            }
-        </script>
-    </body>
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia({
+                video: true
+            }, handleVideo, videoError);
+        }
+
+        function handleVideo(stream) {
+            document.querySelector('#vidDisplay').src = window.URL.createObjectURL(stream);
+        }
+
+        function videoError(e) {
+            alert("There are some problem...");
+        }
+    </script>
+</body>
+
 </html>
